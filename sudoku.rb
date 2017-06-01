@@ -60,7 +60,7 @@ class SudokuGame
   end
 
   def solved?
-    board.solved?
+    board.terminate?
   end
 
   def valid_pos?(pos)

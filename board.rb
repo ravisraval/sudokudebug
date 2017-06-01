@@ -9,8 +9,9 @@ class Board
 
   def self.from_file(filename)
     rows = File.readlines(filename).map(&:chomp)
+
     tiles = rows.map do |row|
-      nums = row.split(" ").map { |char| Integer(char) }
+      nums = row.split("").map { |char| Integer(char) }
       nums.map { |num| Tile.new(num) }
     end
 
@@ -51,7 +52,7 @@ class Board
     grid.size
   end
 
-  def solved?
+  def terminate?
     rows.all? { |row| solved_set?(row) } &&
       columns.all? { |col| solved_set?(col) } &&
       squares.all? { |square| solved_set?(square) }
