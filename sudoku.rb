@@ -35,6 +35,7 @@ class SudokuGame
       print "> "
       val = parse_val(gets.chomp)
     end
+    p val
     val
   end
 
